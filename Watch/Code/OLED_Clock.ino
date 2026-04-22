@@ -44,9 +44,10 @@ void setup()
   display.setCursor(0,0);
   
   Serial.begin(115200);
-  while (!Serial); // wait for serial port to connect. Needed for native USB
-    RTC.begin();
+  
+//  while (!Serial); // wait for serial port to connect. Needed for native USB
 
+    RTC.begin();
   if(RTC.isConnected() == false)
   {
     Serial.println("RTC Not Connected!");
@@ -114,6 +115,37 @@ void setup()
       Serial.print(" ");
       
       display.print(RTC.getMonth());
+      display.print("(");
+
+      switch (RTC.getMonth()) {
+        case 1: display.print("JAN");
+        break;
+        case 2: display.print("FEB");
+        break;
+        case 3: display.print("MAR");
+        break;
+        case 4: display.print("APR");
+        break;
+        case 5: display.print("MAY");
+        break;
+        case 6: display.print("JUN");
+        break;
+        case 7: display.print("JUL");
+        break;
+        case 8: display.print("AUG");
+        break;
+        case 9: display.print("SEP");
+        break;
+        case 10: display.print("OCT");
+        break;
+        case 11: display.print("NOV");
+        break;
+        case 12: display.print("DEC");
+        break;
+      }
+      display.print(")");
+
+      
       display.print("-");
       display.print(RTC.getYear());
       display.print(" ");
