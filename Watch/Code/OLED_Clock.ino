@@ -223,7 +223,7 @@ void setup()
     RTC.setHourMode(CLOCK_H12); //Comment if RTC PCF8563
     //RTC.setHourMode(CLOCK_H24);  
 
-  //RTC.setDateTime(__TIMESTAMP__);
+  RTC.setDateTime(__TIMESTAMP__);
   //      Serial.println(__TIMESTAMP__);
      //   RTC.setDateTime("Fri Apr 17 02:41:00 2026");
 
